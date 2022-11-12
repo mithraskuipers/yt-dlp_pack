@@ -1,0 +1,19 @@
+sudo apt-get ./installs ./installs/
+
+
+install yt-dlp aria2
+
+# 2. Install de configuration files
+
+mkdir -p ~/.config/yt-dlp
+cp ./configs/config ~/.config/yt-dlp/
+cp ./configs/config_audio ~/.config/yt-dlp/
+cp ./configs/config_comments ~/.config/yt-dlp/
+
+echo 'alias yt="yt-dlp"' >> ~/.bashrc
+echo 'alias yta="yt-dlp --config-location /home/mkuipers/.config/yt-dlp/config_audio"' >> ~/.bashrc
+echo 'alias ytc="yt-dlp --config-location /home/mkuipers/.config/yt-dlp/config_comments"' >> ~/.bashrc
+
+Note:
+config will download the best available video and best available audio and combine them in a .webm file.
+config_audio will download the best available audio and save it as .mp3 file.
